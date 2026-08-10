@@ -1,0 +1,28 @@
+// DevSecOps Lifecycle
+digraph {
+	rankdir=LR size="10,4"
+	Plan [label="Plan
+[Threat Modelling]" fillcolor=lightblue shape=box style=filled]
+	Code [label="Code
+[SAST (Static Analysis)]" fillcolor=lightblue shape=box style=filled]
+	Plan -> Code
+	Build [label="Build
+[SCA (Dependency Scan)]" fillcolor=lightblue shape=box style=filled]
+	Code -> Build
+	Test [label="Test
+[DAST (Dynamic Analysis)]" fillcolor=lightblue shape=box style=filled]
+	Build -> Test
+	Release [label="Release
+[Container Image Scan]" fillcolor=lightblue shape=box style=filled]
+	Test -> Release
+	Deploy [label="Deploy
+[IaC / Config Scan]" fillcolor=lightblue shape=box style=filled]
+	Release -> Deploy
+	Operate [label="Operate
+[Runtime Protection]" fillcolor=lightblue shape=box style=filled]
+	Deploy -> Operate
+	Monitor [label="Monitor
+[Continuous Auditing / SIEM]" fillcolor=lightblue shape=box style=filled]
+	Operate -> Monitor
+	Monitor -> Plan [label="Feedback Loop" style=dashed]
+}

@@ -1,0 +1,8 @@
+Plan -> Threat Modelling
+Code -> SAST (Static Analysis)
+Build -> SCA (Dependency Scan)
+Test -> DAST (Dynamic Analysis)
+Release -> Container Image Scan
+Deploy -> IaC / Config Scan
+Operate -> Runtime Protection
+Monitor -> Continuous Auditing / SIEM
